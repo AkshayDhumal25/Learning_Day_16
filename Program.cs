@@ -385,8 +385,25 @@
 
 
 // 12. WAP for getting a square root of a given number.
+//using System;
+//using System.Linq;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            Console.WriteLine("Enter the number : ");
+//            int n = Convert.ToInt32(Console.ReadLine());
+//            var res = Math.Sqrt(n);
+//            Console.WriteLine("SquareRoot : " + res);
+//        }
+//    }
+//}
+
+
+// 11. Find prime numbers from 1 ....n
 using System;
-using System.Linq;
 namespace logicals
 {
     class Program
@@ -395,8 +412,29 @@ namespace logicals
         {
             Console.WriteLine("Enter the number : ");
             int n = Convert.ToInt32(Console.ReadLine());
-            var res = Math.Sqrt(n);
-            Console.WriteLine("SquareRoot : " + res);
+            for (int i = 0; i <= n; i++)
+            {
+                if (isPrime(i))
+                {
+                    Console.WriteLine(i + " ");
+                }
+            }
+        }
+
+        public static bool isPrime(int n)
+        {
+            if (n <= 1) return false;
+            if (n == 2) return true;
+            if (n % 2 == 0) return false;
+
+            for (int i = 3; i * i <= n; i += 2)
+            {
+                if (n % i == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }
