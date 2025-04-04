@@ -357,28 +357,46 @@
 //}
 
 // Abstraction
+//using System;
+//namespace abstraction
+//{
+
+//    abstract class Parent
+//    {
+//        public abstract void Print();
+//    }
+//    class Child : Parent
+//    {
+//        public override void Print()
+//        {
+//            Console.WriteLine("Child Class");
+//        }
+//    }
+
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            Child cd = new Child();
+//            cd.Print();
+//        }
+//    }
+//}
+
+
+// 12. WAP for getting a square root of a given number.
 using System;
-namespace abstraction
+using System.Linq;
+namespace logicals
 {
-
-    abstract class Parent
-    {
-        public abstract void Print();
-    }
-    class Child : Parent
-    {
-        public override void Print()
-        {
-            Console.WriteLine("Child Class");
-        }
-    }
-
     class Program
     {
         public static void Main(string[] args)
         {
-            Child cd = new Child();
-            cd.Print();
+            Console.WriteLine("Enter the number : ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            var res = Math.Sqrt(n);
+            Console.WriteLine("SquareRoot : " + res);
         }
     }
 }
