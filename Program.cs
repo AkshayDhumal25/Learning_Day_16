@@ -167,24 +167,56 @@
 
 
 // 7. WAP to print Fibonacci series with recursion.
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            Console.WriteLine("Enter the number : ");
+//            int n = Convert.ToInt32(Console.ReadLine());
+//            for (int i = 0; i < n; i++)
+//            {
+//                Console.WriteLine(fibo(i));
+//            }
+//        }
+//        public static int fibo(int n)
+//        {
+//            if (n <= 1) return n;
+//            return fibo(n - 1) + fibo(n - 2);
+//        }
+//    }
+//}
+
+// Method Hiding
 using System;
-namespace logicals
+namespace methodHiding
 {
+    class Parent
+    {
+        public void Print()
+        {
+            Console.WriteLine("Parent Class Method");
+        }
+    }
+    class Child : Parent
+    {
+        public new void Print()
+        {
+            Console.WriteLine("Child Class Method");
+        }
+    }
     class Program
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Enter the number : ");
-            int n = Convert.ToInt32(Console.ReadLine());
-            for (int i = 0; i < n; i++)
-            {
-                Console.WriteLine(fibo(i));
-            }
-        }
-        public static int fibo(int n)
-        {
-            if (n <= 1) return n;
-            return fibo(n - 1) + fibo(n - 2);
+            Parent p = new Parent();
+            p.Print();
+            Child c = new Child();
+            c.Print();
+            Parent cp = new Child();
+            cp.Print();
         }
     }
 }
