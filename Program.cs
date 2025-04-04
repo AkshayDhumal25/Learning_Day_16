@@ -326,32 +326,59 @@
 // 19. count lowercase and uppercase
 // input = &quot;Hello world!&quot;
 // output = uppercase = 1, lowercase = 9
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            string str = "Hello World";
+//            int upperCount = 0;
+//            int lowerCount = 0;
+
+//            for (int i = 0; i < str.Length; i++)
+//            {
+//                if (char.IsUpper(str[i]))
+//                {
+//                    upperCount++;
+//                }
+//                else
+//                {
+//                    lowerCount++;
+//                }
+//            }
+
+//            Console.WriteLine($"Upper Count: {upperCount} and Lower Count {lowerCount}");
+//        }
+//    }
+//}
+
+// Abstraction
 using System;
-using System.Collections.Generic;
-using System.Linq;
-namespace logicals
+namespace abstraction
 {
+
+    abstract class Parent
+    {
+        public abstract void Print();
+    }
+    class Child : Parent
+    {
+        public override void Print()
+        {
+            Console.WriteLine("Child Class");
+        }
+    }
+
     class Program
     {
         public static void Main(string[] args)
         {
-            string str = "Hello World";
-            int upperCount = 0;
-            int lowerCount = 0;
-
-            for (int i = 0; i < str.Length; i++)
-            {
-                if (char.IsUpper(str[i]))
-                {
-                    upperCount++;
-                }
-                else
-                {
-                    lowerCount++;
-                }
-            }
-
-            Console.WriteLine($"Upper Count: {upperCount} and Lower Count {lowerCount}");
+            Child cd = new Child();
+            cd.Print();
         }
     }
 }
