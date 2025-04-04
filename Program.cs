@@ -190,33 +190,76 @@
 //}
 
 // Method Hiding
+//using System;
+//namespace methodHiding
+//{
+//    class Parent
+//    {
+//        public void Print()
+//        {
+//            Console.WriteLine("Parent Class Method");
+//        }
+//    }
+//    class Child : Parent
+//    {
+//        public new void Print()
+//        {
+//            Console.WriteLine("Child Class Method");
+//        }
+//    }
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            Parent p = new Parent();
+//            p.Print();
+//            Child c = new Child();
+//            c.Print();
+//            Parent cp = new Child();
+//            cp.Print();
+//        }
+//    }
+//}
+
+
+//Encapsulation
 using System;
-namespace methodHiding
+namespace encapsulation
 {
-    class Parent
+    class rectangleArea
     {
+        private double length;
+        private double width;
+
+        public double Length
+        {
+            get { return length; }
+            set { length = value; }
+        }
+        public double Width
+        {
+            get { return width; }
+            set { width = value; }
+        }
+        public double getArea()
+        {
+            return length * width;
+        }
+
         public void Print()
         {
-            Console.WriteLine("Parent Class Method");
-        }
-    }
-    class Child : Parent
-    {
-        public new void Print()
-        {
-            Console.WriteLine("Child Class Method");
+            Console.WriteLine($"Length: {length} and Width: {width}");
+            Console.WriteLine("Area : " + getArea());
         }
     }
     class Program
     {
         public static void Main(string[] args)
         {
-            Parent p = new Parent();
-            p.Print();
-            Child c = new Child();
-            c.Print();
-            Parent cp = new Child();
-            cp.Print();
+            rectangleArea r = new rectangleArea();
+            r.Length = 9.0;
+            r.Width = 9.0;
+            r.Print();
         }
     }
 }
