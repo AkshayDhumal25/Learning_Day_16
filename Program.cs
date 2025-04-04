@@ -129,6 +129,44 @@
 
 
 // 6. WAP to find the given string is Palindrome or not.
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            string str = "abbna";
+//            if (isPalindrome(str))
+//            {
+//                Console.WriteLine("Palindrome");
+//            }
+//            else
+//            {
+//                Console.WriteLine("Not Palindrome");
+//            }
+//        }
+
+//        public static bool isPalindrome(string str)
+//        {
+//            int left = 0;
+//            int right = str.Length - 1;
+//            while (left < right)
+//            {
+//                if (str[left] != str[right])
+//                {
+//                    return false;
+//                }
+//                left++;
+//                right--;
+//            }
+//            return true;
+//        }
+//    }
+//}
+
+
+// 7. WAP to print Fibonacci series with recursion.
 using System;
 namespace logicals
 {
@@ -136,31 +174,17 @@ namespace logicals
     {
         public static void Main(string[] args)
         {
-            string str = "abbna";
-            if (isPalindrome(str))
+            Console.WriteLine("Enter the number : ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < n; i++)
             {
-                Console.WriteLine("Palindrome");
-            }
-            else
-            {
-                Console.WriteLine("Not Palindrome");
+                Console.WriteLine(fibo(i));
             }
         }
-
-        public static bool isPalindrome(string str)
+        public static int fibo(int n)
         {
-            int left = 0;
-            int right = str.Length - 1;
-            while (left < right)
-            {
-                if (str[left] != str[right])
-                {
-                    return false;
-                }
-                left++;
-                right--;
-            }
-            return true;
+            if (n <= 1) return n;
+            return fibo(n - 1) + fibo(n - 2);
         }
     }
 }
