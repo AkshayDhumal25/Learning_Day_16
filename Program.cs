@@ -293,31 +293,65 @@
 //}
 
 // Diamond Problem
+//using System;
+//namespace diamondProblem
+//{
+//    interface IA
+//    {
+//        public void print()
+//        {
+//            Console.WriteLine("Interface A");
+//        }
+//    }
+//    interface IB : IA { };
+//    interface IC : IA { };
+//    class D : IB, IC
+//    {
+//        public void print()
+//        {
+//            Console.WriteLine("Class D");
+//        }
+//    }
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            D d = new D();
+//            d.print();
+//        }
+//    }
+//}
+
+
+// 19. count lowercase and uppercase
+// input = &quot;Hello world!&quot;
+// output = uppercase = 1, lowercase = 9
 using System;
-namespace diamondProblem
+using System.Collections.Generic;
+using System.Linq;
+namespace logicals
 {
-    interface IA
-    {
-        public void print()
-        {
-            Console.WriteLine("Interface A");
-        }
-    }
-    interface IB : IA { };
-    interface IC : IA { };
-    class D : IB, IC
-    {
-        public void print()
-        {
-            Console.WriteLine("Class D");
-        }
-    }
     class Program
     {
         public static void Main(string[] args)
         {
-            D d = new D();
-            d.print();
+            string str = "Hello World";
+            int upperCount = 0;
+            int lowerCount = 0;
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (char.IsUpper(str[i]))
+                {
+                    upperCount++;
+                }
+                else
+                {
+                    lowerCount++;
+                }
+            }
+
+            Console.WriteLine($"Upper Count: {upperCount} and Lower Count {lowerCount}");
         }
     }
 }
