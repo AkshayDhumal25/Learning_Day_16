@@ -266,28 +266,58 @@
 
 
 //Generics
+//using System;
+//namespace generics
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            Console.WriteLine("Enter the 1st Element : ");
+//            var a = Console.ReadLine();
+//            Console.WriteLine("Enter the 2nd Element : ");
+//            var b = Console.ReadLine();
+
+//            swap(ref a, ref b);
+//        }
+
+//        public static void swap<T>(ref T a, ref T b)
+//        {
+//            var temp = a;
+//            a = b;
+//            b = temp;
+
+//            Console.WriteLine($"A: {a} and B: {b}");
+//        }
+//    }
+//}
+
+// Diamond Problem
 using System;
-namespace generics
+namespace diamondProblem
 {
+    interface IA
+    {
+        public void print()
+        {
+            Console.WriteLine("Interface A");
+        }
+    }
+    interface IB : IA { };
+    interface IC : IA { };
+    class D : IB, IC
+    {
+        public void print()
+        {
+            Console.WriteLine("Class D");
+        }
+    }
     class Program
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Enter the 1st Element : ");
-            var a = Console.ReadLine();
-            Console.WriteLine("Enter the 2nd Element : ");
-            var b = Console.ReadLine();
-
-            swap(ref a, ref b);
-        }
-
-        public static void swap<T>(ref T a, ref T b)
-        {
-            var temp = a;
-            a = b;
-            b = temp;
-
-            Console.WriteLine($"A: {a} and B: {b}");
+            D d = new D();
+            d.print();
         }
     }
 }
